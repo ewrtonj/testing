@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Barrinha e Seções</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: white;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .navbar .logo img {
+            height: 40px; /* Ajuste o tamanho da imagem aqui */
+            width: auto;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: #01213A;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        .navbar .menu a:hover {
+            color: #488CCB;
+        }
+
+        .menu-toggle {
+            display: none; /* Esconde o ícone no desktop */
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #01213A;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar .menu a {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block; /* Exibe o ícone de menu na versão mobile */
+            }
+
+            .navbar .menu.show {
+                display: flex;
+            }
+        }
+
+        .section-light-blue {
+            background-color: #488CCB;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            position: relative;
+            overflow: hidden; /* Impede que a imagem ultrapasse a área da seção */
+            padding-top: 40px; /* Aumenta o espaçamento superior da seção */
+            text-align: center;
+        }
+
+        .section-light-blue img {
+            position: absolute;
+            width: 25%; /* Ajuste o tamanho da imagem aqui */
+            height: auto;
+            object-fit: cover;
+            left: 10%; /* Move a imagem mais para a esquerda */
+            top: -4%; /* Ajusta a posição superior da imagem, afastando ela mais do cabeçalho */
+            transform: translateX(0);
+        }
+
+        /* Estilos do texto Dr. Íkaro Nathan Pacífico */
+        .section-light-blue .text-content {
+            position: absolute;
+            right: 250px; /* Ajuste a distância da margem direita */
+            top: 30%; /* Ajuste a distância da margem superior */
+            text-align: right; /* Alinha o texto à direita */
+            max-width: 50%; /* Limita a largura do texto */
+        }
+
+        .section-light-blue h1 {
+            font-size: 1.5rem; /* Tamanho do título */
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+
+        .section-light-blue p {
+            font-size: 0.8rem; /* Tamanho do parágrafo */
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .section-dark-blue {
+            background-color: #01213A; /* A cor azul escura não foi alterada */
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="file:///C:/Users/ewert/Downloads/Nova%20pasta/fotos/logo.png" alt="Logotipo">
+        </div>
+        <div class="menu">
+            <a href="#services">Serviços</a>
+            <a href="#contact">Contato</a>
+            <a href="#address">Endereço</a>
+        </div>
+    </div>
+    <div class="section-light-blue">
+        <img src="file:///C:/Users/ewert/Downloads/Nova%20pasta/fotos/dentista.png" alt="Dentista">
+        <div class="text-content">
+            <h1>Dr. Íkaro Nathan Pacífico</h1>
+            <p>Dentista dedicado ao cuidado integral da saúde bucal, com foco em tratamentos de qualidade e atendimento humanizado. Sempre atualizado nas melhores práticas da odontologia, busca transformar sorrisos e promover bem-estar aos seus pacientes.</p>
+        </div>
+    </div>
+    <div class="section-dark-blue">
+        <p>Esta é a seção azul escura (#01213A)</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
